@@ -1,0 +1,21 @@
+<html>
+<title></title>
+<body>
+<input type="text" id="auto_material" name="material" class="campo" style="width:99%;"/>
+<!--<input type="hidden" id="id_material" />-->
+
+
+
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+$("#auto_material").autocomplete({
+                source:'{% url 'search_view' %}',
+                minLength: 2,
+                select: function( event, ui ) {
+                    $("#auto_material").val(ui.item.label);
+                    return false;
+                }
+
+            });
+</script>
+</body>
+</html>

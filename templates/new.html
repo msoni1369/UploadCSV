@@ -1,0 +1,32 @@
+{% block title %}
+        Add/Edit {{ title  }}
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                    <h4>{{ title  }}</h4>
+                    <br><div class="center">
+                <form method="POST"  class="form" action="" method="get">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        
+                        {{LeaseProfileForm.as_p }}
+
+
+                        {{ form.media }}
+
+                        <BR><BR>
+                        <button type="submit" class="btn btn-primary btn-primary">Save</button>
+                    </div>
+                </form>
+               </div>
+            </div>
+        </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+ {% endblock content %} 
